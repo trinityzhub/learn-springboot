@@ -13,7 +13,7 @@ public class FunRestController {
     public String sayHello() {
         return "Hi Hello";
     }
-    @RequestMapping("/list", pro)
+    @RequestMapping("/list")
     public List getList() {
 
         List temp = new ArrayList<Integer>();
