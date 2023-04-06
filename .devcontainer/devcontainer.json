@@ -11,6 +11,21 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vmware.vscode-spring-boot",
+				"vscjava.vscode-spring-boot-dashboard",
+				"vmware.vscode-boot-dev-pack",
+				"DotJoshJohnson.xml",
+				"vscjava.vscode-java-pack",
+				"vscjava.vscode-maven",
+				"vscjava.vscode-java-dependency",
+				"vscjava.vscode-java-debug",
+				"redhat.java"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
