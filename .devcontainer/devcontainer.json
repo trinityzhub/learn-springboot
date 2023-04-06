@@ -23,7 +23,8 @@
 				"vscjava.vscode-maven",
 				"vscjava.vscode-java-dependency",
 				"vscjava.vscode-java-debug",
-				"redhat.java"
+				"redhat.java",
+				"loiane.java-spring-extension-pack"
 			]
 		}
 	}
