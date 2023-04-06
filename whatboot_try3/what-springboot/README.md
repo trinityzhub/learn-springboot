@@ -35,3 +35,11 @@ http://localhost:8080/actuator/info
 http://localhost:8080/person/f
 
 http://localhost:8080/person/a
+
+
+
+http://localhost:8080/actuator/beans
+
+http://localhost:8080/actuator/threaddump
+
+
