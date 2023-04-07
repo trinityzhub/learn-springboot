@@ -24,7 +24,6 @@
 				"vscjava.vscode-java-dependency",
 				"vscjava.vscode-java-debug",
 				"redhat.java",
-				"loiane.java-spring-extension-pack",
 				"mhutchie.git-graph"
 			]
 		}
