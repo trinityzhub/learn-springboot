@@ -47,3 +47,7 @@ Inside  IDEA test Container
  docker inspect IdeaH3Test
 
 http://172.17.0.2:7070/app11/list
+
+
+
+
