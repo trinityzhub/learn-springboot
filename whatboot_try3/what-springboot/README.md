@@ -43,4 +43,7 @@ http://localhost:8080/actuator/beans
 http://localhost:8080/actuator/threaddump
 
 
-Testing Intelij
+Inside  IDEA test Container
+ docker inspect IdeaH3Test
+
+http://172.17.0.2:7070/app11/list
