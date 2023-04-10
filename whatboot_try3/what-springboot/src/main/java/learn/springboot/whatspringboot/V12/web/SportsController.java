@@ -10,11 +10,25 @@ public class SportsController {
 
     private Coach myCoach;
 
+/*
     @Autowired
     public SportsController(Coach myCoach) {
         this.myCoach=myCoach;
     }
+*/
+/*
+    @Autowired
+    public void setMyCoach(Coach myCoach) {
+        System.out.println("setMyCoach-------------------");
+        this.myCoach = myCoach;
+    }
 
+*/
+    @Autowired
+    public void methodInjection(Coach myCoach) {
+        System.out.println("setMyCoach-------------------");
+        this.myCoach = myCoach;
+    }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
