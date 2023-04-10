@@ -13,5 +13,7 @@ public class CricketCoach implements Coach {
     public String getDailyWorkout() {
         return "Practice 5hr Daily";
     }
-
+    static {
+        System.out.println("---------------CricketCoach-------------------");
+    }
 }

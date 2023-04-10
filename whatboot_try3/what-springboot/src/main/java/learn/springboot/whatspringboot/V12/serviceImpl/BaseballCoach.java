@@ -12,4 +12,8 @@ public class BaseballCoach implements Coach {
         return "Practice 2hr Daily in BALL";
     }
 
+    static {
+        System.out.println("---------------BaseballCoach-------------------");
+    }
+
 }
