@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SportsController {
 
-    private Coach myCoach;
+    private final Coach myCoach;
 
-/*
+
     @Autowired
     public SportsController(Coach myCoach) {
         this.myCoach=myCoach;
     }
-*/
+
 /*
     @Autowired
     public void setMyCoach(Coach myCoach) {
@@ -25,11 +25,14 @@ public class SportsController {
     }
 
 */
+/*
     @Autowired
     public void methodInjection(@Qualifier("baseballCoach") Coach myCoach) {
         System.out.println("setMyCoach-------------------");
         this.myCoach = myCoach;
     }
+*/
+
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
