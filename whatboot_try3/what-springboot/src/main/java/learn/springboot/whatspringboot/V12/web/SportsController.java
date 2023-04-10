@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SportsController {
 
     private final Coach myCoach;
-
+    private  Coach specialCoach;
 
     @Autowired
     public SportsController(Coach myCoach) {
@@ -25,13 +25,13 @@ public class SportsController {
     }
 
 */
-/*
+
     @Autowired
-    public void methodInjection(@Qualifier("baseballCoach") Coach myCoach) {
+    public void methodInjection(@Qualifier("baseballCoach") Coach specialCoach) {
         System.out.println("setMyCoach-------------------");
-        this.myCoach = myCoach;
+        this.specialCoach = specialCoach;
     }
-*/
+
 
 
     @GetMapping("/dailyworkout")
@@ -40,5 +40,9 @@ public class SportsController {
     }
 
 
+    @GetMapping("/spl/dailyworkout")
+    public String getSpecialDailyWorkout() {
+        return specialCoach.getDailyWorkout();
+    }
 
 }
