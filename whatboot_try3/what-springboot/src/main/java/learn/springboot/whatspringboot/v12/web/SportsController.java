@@ -13,6 +13,11 @@ public class SportsController {
     private  Coach specialCoach;
 
     @Autowired
+    @Qualifier("mySwimCoach")
+    private Coach swimCoach;
+
+
+    @Autowired
     public SportsController(Coach myCoach) {
         this.myCoach=myCoach;
     }
@@ -46,11 +51,17 @@ public class SportsController {
     }
 
 
+    @GetMapping("/swim/dailyworkout")
+    public String getSwimDailyWorkout() {
+        return swimCoach.getDailyWorkout();
+    }
+
 
     @Autowired
     public void testingScopeByMethodInjection(@Qualifier("baseballCoach") Coach testCoach) {
         System.out.println("testingScope (baseballCoach) ByMethodInjection: "+ ( this.specialCoach == testCoach ) ) ;
     }
+
 
 
 }
