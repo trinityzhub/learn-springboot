@@ -45,4 +45,12 @@ public class SportsController {
         return specialCoach.getDailyWorkout();
     }
 
+
+
+    @Autowired
+    public void testingScopeByMethodInjection(@Qualifier("baseballCoach") Coach testCoach) {
+        System.out.println("testingScope (baseballCoach) ByMethodInjection: "+ ( this.specialCoach == testCoach ) ) ;
+    }
+
+
 }
