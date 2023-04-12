@@ -1,6 +1,7 @@
 package learn.springboot.whatspringboot.v12.serviceImpl;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import learn.springboot.whatspringboot.v12.service.Coach;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -21,8 +22,20 @@ public class BaseballCoach implements Coach {
     }
 
     @PostConstruct
-    public void printObjectName() {
-        System.out.println("Get Class  Name: "+ getClass().getSimpleName());
+    public void printNamePostConstruct() {
+        printSimpleName("PostConstruct");
     }
+
+    @PreDestroy
+    public void printNamePreDestroy() {
+        printSimpleName("PreDestroy");
+    }
+
+
+
+    private void printSimpleName(String situvation) {
+        System.out.println("Get Class Name @"+situvation+": "+ getClass().getSimpleName());
+    }
+
 
 }
