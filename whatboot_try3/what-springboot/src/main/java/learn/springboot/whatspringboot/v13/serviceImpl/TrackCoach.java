@@ -14,9 +14,6 @@ public class TrackCoach implements Coach {
         return "Practice 7hr Daily in Round Ground";
     }
 
-    static {
-        System.out.println("---------------TrackCoach-- Will not been call due to @lazy -----------------");
-    }
 
 
 }

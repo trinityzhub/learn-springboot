@@ -17,25 +17,5 @@ public class BaseballCoach implements Coach {
         return "Practice 2hr Daily in BALL";
     }
 
-    static {
-        System.out.println("---------------BaseballCoach-------------------");
-    }
-
-    @PostConstruct
-    public void printNamePostConstruct() {
-        printSimpleName("PostConstruct");
-    }
-
-    @PreDestroy
-    public void printNamePreDestroy() {
-        printSimpleName("PreDestroy");
-    }
-
-
-
-    private void printSimpleName(String situvation) {
-        System.out.println("Get Class Name @"+situvation+": "+ getClass().getSimpleName());
-    }
-
 
 }

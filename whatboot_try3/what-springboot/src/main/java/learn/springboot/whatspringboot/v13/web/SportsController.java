@@ -10,58 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class SportsController {
 
     private final Coach myCoach;
-    private  Coach specialCoach;
-
-    @Autowired
-    @Qualifier("mySwimCoach")
-    private Coach swimCoach;
-
 
     @Autowired
     public SportsController(Coach myCoach) {
         this.myCoach=myCoach;
     }
 
-/*
-    @Autowired
-    public void setMyCoach(Coach myCoach) {
-        System.out.println("setMyCoach-------------------");
-        this.myCoach = myCoach;
-    }
-
-*/
-
-    @Autowired
-    public void methodInjection(@Qualifier("baseballCoach") Coach specialCoach) {
-        System.out.println("setMyCoach-------------------");
-        this.specialCoach = specialCoach;
-    }
-
-
-
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
-
-
-    @GetMapping("/spl/dailyworkout")
-    public String getSpecialDailyWorkout() {
-        return specialCoach.getDailyWorkout();
-    }
-
-
-    @GetMapping("/swim/dailyworkout")
-    public String getSwimDailyWorkout() {
-        return swimCoach.getDailyWorkout();
-    }
-
-
-    @Autowired
-    public void testingScopeByMethodInjection(@Qualifier("baseballCoach") Coach testCoach) {
-        System.out.println("testingScope (baseballCoach) ByMethodInjection: "+ ( this.specialCoach == testCoach ) ) ;
-    }
-
 
 
 }

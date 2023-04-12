@@ -15,24 +15,4 @@ public class SwimCoach implements Coach {
         return "Swim 1 hr";
     }
 
-
-/*
-
-    @PostConstruct
-    public void printNamePostConstruct() {
-        printSimpleName("PostConstruct");
-    }
-
-    @PreDestroy
-    public void printNamePreDestroy() {
-        printSimpleName("PreDestroy");
-    }
-
-*/
-
-    private void printSimpleName(String situvation) {
-        System.out.println("Get Class Name @"+situvation+": "+ getClass().getSimpleName());
-    }
-
-
 }
