@@ -1,6 +1,6 @@
-package learn.springboot.whatspringboot.V12.web;
+package learn.springboot.whatspringboot.v12.web;
 
-import learn.springboot.whatspringboot.V12.service.Coach;
+import learn.springboot.whatspringboot.v12.service.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
