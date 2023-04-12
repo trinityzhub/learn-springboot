@@ -17,9 +17,15 @@ public class FunRestController {
     @Value("${info.app.version}")
     private String appVersion;
 
+    static {
+        System.out.println("FunRestController-------------------");
+    }
+
+
     //
     @RequestMapping("/hello")
     public String sayHello() {
+        System.out.println("sayHello-------------------");
         return "Welcome "+appName+" version:"+appVersion;
     }
     @GetMapping(path = "/list",  produces = MediaType.APPLICATION_JSON_VALUE) 

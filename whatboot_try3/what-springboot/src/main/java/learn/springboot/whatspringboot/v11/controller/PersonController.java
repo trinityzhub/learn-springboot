@@ -18,7 +18,9 @@ import learn.springboot.whatspringboot.v11.model.User;
 // @RequestMapping(path = "/pets", method = RequestMethod.GET, consumes="application/json")
 public class PersonController {
 
-
+	static {
+		System.out.println("PersonController-------------------");
+	}
 	private static List<User> customers;
 	{
 		customers = new ArrayList<>();
