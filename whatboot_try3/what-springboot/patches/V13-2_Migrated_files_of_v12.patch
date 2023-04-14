@@ -1,0 +1,194 @@
+Subject: [PATCH] V12 Migrated files
+---
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/config/SportConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/config/SportConfig.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/config/SportConfig.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/config/SportConfig.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,15 @@
++package learn.springboot.whatspringboot.v13.config;
++
++import learn.springboot.whatspringboot.v13.service.Coach;
++import learn.springboot.whatspringboot.v13.serviceImpl.SwimCoach;
++import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Configuration;
++
++@Configuration
++public class SportConfig {
++
++    @Bean
++    public Coach mySwimCoach() {
++        return new SwimCoach();
++    }
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/service/Coach.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/service/Coach.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/service/Coach.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/service/Coach.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,7 @@
++package learn.springboot.whatspringboot.v13.service;
++
++public interface Coach {
++
++    String getDailyWorkout();
++
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/BaseballCoach.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/BaseballCoach.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/BaseballCoach.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/BaseballCoach.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,21 @@
++package learn.springboot.whatspringboot.v13.serviceImpl;
++
++import jakarta.annotation.PostConstruct;
++import jakarta.annotation.PreDestroy;
++import learn.springboot.whatspringboot.v13.service.Coach;
++import org.springframework.beans.factory.config.ConfigurableBeanFactory;
++import org.springframework.context.annotation.Scope;
++import org.springframework.stereotype.Component;
++
++@Component
++@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
++public class BaseballCoach implements Coach {
++
++
++    @Override
++    public String getDailyWorkout() {
++        return "Practice 2hr Daily in BALL";
++    }
++
++
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/CricketCoach.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/CricketCoach.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/CricketCoach.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/CricketCoach.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,17 @@
++package learn.springboot.whatspringboot.v13.serviceImpl;
++
++import learn.springboot.whatspringboot.v13.service.Coach;
++import org.springframework.context.annotation.Primary;
++import org.springframework.stereotype.Component;
++
++@Component
++@Primary
++public class CricketCoach implements Coach {
++
++
++    @Override
++    public String getDailyWorkout() {
++        return "Practice 5hr Daily using bat";
++    }
++
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/SwimCoach.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/SwimCoach.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/SwimCoach.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/SwimCoach.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,18 @@
++package learn.springboot.whatspringboot.v13.serviceImpl;
++
++import jakarta.annotation.PostConstruct;
++import jakarta.annotation.PreDestroy;
++import learn.springboot.whatspringboot.v13.service.Coach;
++
++
++// Not using @Component , Instead of We have a bean at SportConfig
++public class SwimCoach implements Coach {
++
++
++
++    @Override
++    public String getDailyWorkout() {
++        return "Swim 1 hr";
++    }
++
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/TrackCoach.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/TrackCoach.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/TrackCoach.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/serviceImpl/TrackCoach.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,19 @@
++package learn.springboot.whatspringboot.v13.serviceImpl;
++
++import learn.springboot.whatspringboot.v13.service.Coach;
++import org.springframework.context.annotation.Lazy;
++import org.springframework.stereotype.Component;
++
++@Component
++@Lazy
++public class TrackCoach implements Coach {
++
++
++    @Override
++    public String getDailyWorkout() {
++        return "Practice 7hr Daily in Round Ground";
++    }
++
++
++
++}
+Index: whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/web/SportsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/web/SportsController.java b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/web/SportsController.java
+new file mode 100644
+--- /dev/null	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
++++ b/whatboot_try3/what-springboot/src/main/java/learn/springboot/whatspringboot/v13/web/SportsController.java	(revision 0aca15a8f2f2f08d48aceadf10fb87c6003d3ba5)
+@@ -0,0 +1,25 @@
++package learn.springboot.whatspringboot.v13.web;
++
++import learn.springboot.whatspringboot.v13.service.Coach;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.beans.factory.annotation.Qualifier;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++@RestController
++public class SportsController {
++
++    private final Coach myCoach;
++
++    @Autowired
++    public SportsController(Coach myCoach) {
++        this.myCoach=myCoach;
++    }
++
++    @GetMapping("/dailyworkout")
++    public String getDailyWorkout() {
++        return myCoach.getDailyWorkout();
++    }
++
++
++}
