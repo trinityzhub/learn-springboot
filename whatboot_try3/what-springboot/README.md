@@ -23,6 +23,16 @@ The following guides illustrate how to use some features concretely:
 
 
 
+### Mysql
+
+
+docker run -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:8.0
+
+
+
+
+
+
 
 http://localhost:8080/hello
 http://localhost:8080/list
