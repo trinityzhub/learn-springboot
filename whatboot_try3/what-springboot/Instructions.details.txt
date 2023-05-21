@@ -64,6 +64,10 @@ mysql:8.0
 
 docker exec -it -u 0 themysql /bin/bash
 
+## how to login
+mysql -u root -p
+
+
 # fix for permission issue
 # ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 sudo chown -R ubbe:general /dockerco/rootco/mysql/themysql/
