@@ -110,6 +110,14 @@ sudo /etc/init.d/mysql start
 
 
 
+## how to  execute shell script in Mysql
+system /bin/bash /workspace/assosiated/db/sample.sh
+
+USE database_name;
+source /workspace/assosiated/db/01-create-user.sql;
+source /workspace/assosiated/db/02-student-tracker.sql;
+
+
 
 
 
