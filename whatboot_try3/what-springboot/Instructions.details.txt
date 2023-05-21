@@ -7,6 +7,95 @@
 02-student-tracker.sql
 
 
-docker run -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:8.0
+docker run \
+-e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic \
+-e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_DATABASE=petclinic \
+-p 3306:3306 \
+--name mysql \
+-v /dockerco/rootco/mysql/themysql/work:/workspace
+--ip 172.18.0.33 \
+--net-alias=t9-mysql \
+--net bridge172 \
+--hostname D45mysql-t9 \
+mysql:8.0
+
+
+docker start mysql
+docker exec -it -u 0 mysql /bin/bash
+
+
+ docker exec -it mysql mysql -p
+
+
+docker start mysql
+docker exec -it mysql mysql -uroot -p
+
+docker stop mysql
+
+
+
+
+
+
+###################
+
+
+docker stop mysql
+docker stop themysql
+
+docker rm themysql
+
+docker run \
+-e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic \
+-e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_DATABASE=petclinic \
+-p 3306:3306 \
+-v /dockerco/rootco/mysql/themysql/root:/root \
+-v /dockerco/rootco/mysql/themysql/work:/workspace \
+--name themysql \
+--ip 172.18.0.133 \
+--net-alias=t9-mysql \
+--net bridge172 \
+--hostname D45mysql-t9 \
+mysql:8.0
+
+
+
+docker exec -it -u 0 themysql /bin/bash
+
+
+ docker exec -it themysql mysql -p
+
+> docker logs mysql1 2>&1 | grep GENERATED
+
+
+docker exec -it themysql mysql -uroot -p
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+bash-4.2# ls /var/lib/mysql
+
+
+
+mysql -h 127.0.0.1 -P 3306 -u root -p <database>
+
+
+## Also (to see if it's running):
+telnet 127.0.0.1 3306
+
+
+
+
+
+sudo /etc/init.d/mysql stop
+...
+sudo /etc/init.d/mysql start
+
+
+
+
+
+
+
 
 
