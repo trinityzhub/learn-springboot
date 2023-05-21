@@ -1,7 +1,10 @@
 package learn.springboot.whatspringboot;
 
+import learn.springboot.whatspringboot.v13.dao.CustomerRepository;
 import learn.springboot.whatspringboot.v13.dao.StudentDAO;
+import learn.springboot.whatspringboot.v13.dto.CustomerData;
 import learn.springboot.whatspringboot.v13.entity.Student;
+import learn.springboot.whatspringboot.v13.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,10 +20,11 @@ public class CrudApplication {
 
 	//@Autowired
 	@Bean
-	public CommandLineRunner CommandLineRunner(StudentDAO theStudentDAO)  {  //(String[] args) {
+	public CommandLineRunner CommandLineRunner(StudentDAO theStudentDAO, CustomerService theCustomerDAO)  {  //(String[] args) {
 		return  runner -> {
 			System.out.println("---------------Hello World ; CommandLineRunner ");
 			// createDummyStudents(theStudentDAO);
+			createDummyCustomer(theCustomerDAO);
 		};
 	}
 
@@ -38,6 +42,19 @@ public class CrudApplication {
 		dao.save(temp4);
 		
 	}
-	
+
+	private void createDummyCustomer(CustomerService dao) {
+
+		CustomerData temp1 = new CustomerData(1L,"aby", "Koe", "aby@gmail.com");
+		CustomerData temp2 = new CustomerData(2L,"Kushi", "Koe", "Kushi@gmail.com");
+		CustomerData temp3 = new CustomerData(3L,"Babu", "Drona", "babu@gmail.com");
+		CustomerData temp4 = new CustomerData(4L,"Kuyil", "Drona", "aby@gmail.com");
+
+		dao.save(temp1);
+		dao.save(temp2);
+		dao.save(temp3);
+		dao.save(temp4);
+
+	}
 
 }
