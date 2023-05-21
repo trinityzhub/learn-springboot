@@ -27,6 +27,32 @@ public class CustomerServiceImpl implements CustomerService {
         return customerData;
     }
 
+    /**
+     * Method to map the front end customer object to the JPA customer entity.
+     * @param customerData
+     * @return Customer
+     */
+    private Customer populateCustomerEntity(CustomerData customerData) {
+        Customer customer = new Customer();
+        customer.setFirstName(customerData.getFirstName());
+        customer.setLastName(customerData.getLastName());
+        customer.setEmail(customerData.getEmail());
+        return customer;
+    }
+
+
+
+
+    /**
+     * Create a customer based on the data sent to the service class.
+     * @param customer
+     * @return DTO representation of the customer
+     */
+    @Override
+    public CustomerData save(CustomerData customer) {
+        Customer customerModel = populateCustomerEntity(customer);
+        return populateCustomerData(customerRepository.save(customerModel));
+    }
 
 
 
