@@ -24,7 +24,7 @@ public class CrudApplication {
 		return  runner -> {
 			System.out.println("---------------Hello World ; CommandLineRunner ");
 			// createDummyStudents(theStudentDAO);
-			createDummyCustomer(theCustomerDAO);
+			// createDummyCustomer(theCustomerDAO);
 		};
 	}
 
