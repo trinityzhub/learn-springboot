@@ -22,7 +22,7 @@ mysql:8.0
 
 
 docker start mysql
-docker exec -it -u 0 mysql /bin/bash
+docker exec -it -u 0 themysql /bin/bash
 
 
  docker exec -it mysql mysql -p
@@ -79,6 +79,9 @@ sudo chmod -R g=u /dockerco/rootco/mysql/themysql/
 
  docker exec -it themysql mysql -uroot -p
 
+ docker exec -it themysql mysql -uroot -p root
+
+
 
 
 
@@ -119,6 +122,11 @@ source /workspace/assosiated/db/02-student-tracker.sql;
 
 
 
+USE student_tracker;
+source /work/assosiated/db/01-create-user.sql;
+source /work/assosiated/db/02-student-tracker.sql;
+
+
 
 
 http://172.17.0.2:7070/app11/list
@@ -129,4 +137,26 @@ http://172.18.0.17:7070/app13/all
 http://172.18.0.17:7070/app13/customers
 
 
+
+
+
+
+**************
+
+
+
+
+## working
+docker exec -it themysql mysql -uroot -p petclinic
+root as passwod prompt
+
+
+## working
+docker exec -it themysql mysql -uroot -p student_tracker
+root as passwod prompt
+USE student_tracker;
+
+
+source /work/assosiated/db/01-create-user.sql;
+source /work/assosiated/db/02-student-tracker.sql;
 
