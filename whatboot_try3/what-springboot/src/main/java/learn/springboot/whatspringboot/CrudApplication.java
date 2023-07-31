@@ -11,22 +11,32 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(scanBasePackages = { "learn.springboot.whatspringboot.v12", "learn.springboot.whatspringboot.util"} )
+@SpringBootApplication(scanBasePackages = { "learn.springboot.whatspringboot.v13", "learn.springboot.whatspringboot.util"} )
 public class CrudApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 
+//
+//	// v12
+//	@Bean
+//	public CommandLineRunner CommandLineRunner((String[] args) {
+//		return  runner -> {
+//			System.out.println("---------------Hello World ; CommandLineRunner ");
+//		};
+//	}
+//
+
 	//@Autowired
 	@Bean
 	public CommandLineRunner CommandLineRunner(StudentDAO theStudentDAO, CustomerService theCustomerDAO)  {  //(String[] args) {
 		return  runner -> {
-			System.out.println("---------------Hello World ; CommandLineRunner ");
+			System.out.println("------V0---------Hello World ; CommandLineRunner ");
 
 			// only support v13+
-			// createDummyStudents(theStudentDAO);
-			// createDummyCustomer(theCustomerDAO);
+//			 createDummyStudents(theStudentDAO);
+//			 createDummyCustomer(theCustomerDAO);
 		};
 	}
 
