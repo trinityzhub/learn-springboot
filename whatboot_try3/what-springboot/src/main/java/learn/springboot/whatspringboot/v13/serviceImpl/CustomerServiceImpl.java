@@ -15,7 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerRepository myDataSource;
 
 
     private CustomerData populateCustomerData(final Customer customer) {
@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerData save(CustomerData customer) {
         Customer customerModel = populateCustomerEntity(customer);
-        return populateCustomerData(customerRepository.save(customerModel));
+        return populateCustomerData(myDataSource.save(customerModel));
     }
 
 
@@ -59,7 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List <CustomerData> getAllCustomers() {
         List < CustomerData > customers = new ArrayList < > ();
-        List <Customer> customerList = customerRepository.findAll();
+        List <Customer> customerList = myDataSource.findAll();
         customerList.forEach(customer -> {
                 customers.add(populateCustomerData(customer));
         });

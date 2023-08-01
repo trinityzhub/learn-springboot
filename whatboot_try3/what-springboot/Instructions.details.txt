@@ -204,8 +204,8 @@ v13
 
 http://172.18.0.17:7070/app13/list
 
-http://172.18.0.17:7070/app13/customers
-http://172.18.0.17:7070/app13/students/all
+http://172.18.0.17:7070/app13/jpa/customers
+http://172.18.0.17:7070/app13/jpa/students/all
 
 
 

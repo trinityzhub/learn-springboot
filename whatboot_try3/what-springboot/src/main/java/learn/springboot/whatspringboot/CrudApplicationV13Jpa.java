@@ -10,12 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 
-@SpringBootApplication(scanBasePackages = { "learn.springboot.whatspringboot.v13", "learn.springboot.whatspringboot.util"} )
+@SpringBootApplication(scanBasePackages = { "learn.springboot.whatspringboot.v13"} )
 @PropertySource("classpath:v13.properties")
-public class CrudApplicationV13 {
+public class CrudApplicationV13Jpa {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudApplicationV13.class, args);
+		SpringApplication.run(CrudApplicationV13Jpa.class, args);
 	}
 
 
