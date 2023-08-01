@@ -196,7 +196,7 @@ v12
 
 http://172.18.0.17:7070/app12/dailyworkout
 
-http://172.18.0.17:7070/app13/sports/dailyworkout
+http://172.18.0.17:7070/basic12/rest/sports/dailyworkout
 
 
 
