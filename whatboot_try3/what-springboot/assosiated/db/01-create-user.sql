@@ -1,3 +1,7 @@
+
+
+-- 172.18.0.17 is the ip address of intelij IDE
+
 -- Drop user first if they exist
 DROP USER if exists 'springstudent'@'172.18.0.17' ;
 

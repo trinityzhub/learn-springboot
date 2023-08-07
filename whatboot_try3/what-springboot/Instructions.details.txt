@@ -209,3 +209,5 @@ http://172.18.0.17:7070/app13/jpa/students/all
 
 
 
+http://172.18.0.17:7070/students
+http://172.18.0.17:7171/students
