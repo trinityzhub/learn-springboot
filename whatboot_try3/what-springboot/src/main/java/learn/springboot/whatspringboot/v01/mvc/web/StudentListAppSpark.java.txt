@@ -1,0 +1,29 @@
+package learn.springboot.whatspringboot.v01.mvc.web;
+
+import learn.springboot.whatspringboot.v01.mvc.entity.Student;
+import learn.springboot.whatspringboot.v01.mvc.service.StudentController;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+import spark.Spark;
+
+import java.util.List;
+
+public class StudentListAppSpark {
+    public static void main(String[] args) {
+        Spark.port(8080); // Set the port
+
+        StudentController studentController = new StudentController();
+
+        Spark.get("/students", (req, res) -> getAllStudents(studentController));
+
+        System.out.println("RESTful endpoints are running:");
+        System.out.println("GET http://localhost:8080/students");
+    }
+
+    private static String getAllStudents(StudentController studentController) {
+        List<Student> students = studentController.getAllStudents();
+        // Convert students to JSON or XML format
+        return students.toString();
+    }
+}

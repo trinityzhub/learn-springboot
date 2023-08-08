@@ -23,7 +23,7 @@ public class StudentListAppREST {
         server.setExecutor(null); // creates a default executor
         server.start();
 
-        System.out.println("RESTful endpoints are running:");
+        System.out.println("RESTful endpoints are running: (not working)");
         System.out.println("GET http://172.18.0.17:7171/students");
     }
 
